@@ -8,7 +8,7 @@ url-loader, sass-loader.
 Install all the node_modules
 
 ```bash
-npm install
+yarn install
 ```
 
 ## run
@@ -16,7 +16,7 @@ npm install
 To run it on development server : default port is 9000
 
 ```bash
-npm start
+yarn start
 ```
 
 ## build
@@ -24,7 +24,7 @@ npm start
 To create a production version
 
 ```bash
-npm run build
+yarn build
 ```
 
 ## test
@@ -32,7 +32,7 @@ npm run build
 Test the application using the test-cases used jest and enzyme
 
 ```bash
-npm test
+yarn test
 ```
 
 ## Contributing
