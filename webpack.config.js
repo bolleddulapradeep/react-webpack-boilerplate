@@ -1,12 +1,11 @@
 const path = require('path');
-const htmlWebPackPlugin = require('html-webpack-plugin');
-
+const webpack = require('webpack');
 module.exports = {
-  entry: path.resolve(__dirname, 'src') + '/index.js',
+  entry: path.resolve(__dirname, 'src', 'index.js'),
   target: 'web',
   output: {
     filename: 'bundle.js',
-    path: __dirname + '/build',
+    path: path.resolve(__dirname + '/build'),
   },
   module: {
     rules: [
@@ -40,21 +39,14 @@ module.exports = {
     ],
   },
   devServer: {
-    contentBase: path.join(__dirname, 'build'),
+    contentBase: path.resolve(__dirname, './build'),
     compress: true,
     historyApiFallback: true,
+    port: 3000,
     hot: true,
-    port: 9000,
   },
-  plugins: [
-    new htmlWebPackPlugin({
-      template: __dirname + '/build/index.html',
-      inject: 'body',
-      filename: 'index.html',
-    }),
-  ],
+  plugins: [new webpack.HotModuleReplacementPlugin()],
   resolve: {
-    modules: [__dirname, 'src', 'node_modules'],
-    extensions: ['*', '.js', '.jsx', '.ts', '.tsx'],
+    extensions: ['*', '.js', '.jsx'],
   },
 };
