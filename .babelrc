@@ -1,0 +1,10 @@
+{
+  "presets": [
+    "@babel/preset-react",
+    ["@babel/preset-env", { "targets": { "browsers": [">0.1%", "not dead"] } }]
+  ],
+  "plugins": [
+    ["@babel/plugin-proposal-class-properties", { "loose": true }],
+    ["react-remove-properties", { "properties": ["data-test", "data-foo"] }]
+  ]
+}
