@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 module.exports = {
+  devtool: 'source-map',
   entry: path.resolve(__dirname, 'src', 'index.js'),
   target: 'web',
   output: {
@@ -12,7 +13,19 @@ module.exports = {
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              plugins: [
+                [
+                  'react-remove-properties',
+                  { properties: ['data-test', 'data-foo'] },
+                ],
+              ],
+            },
+          },
+        ],
       },
       {
         test: /\.css$/,
