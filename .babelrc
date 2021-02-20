@@ -3,11 +3,11 @@
     "@babel/preset-react",
     [
       "@babel/preset-env",
-      { "targets": { "browsers": ["> 1%", "last 2 versions"] } }
+      { "targets": { "node":"current","browsers": ["> 1%", "last 2 versions"] } }
     ]
   ],
   "plugins": [
-    ["@babel/plugin-proposal-class-properties", { "loose": true }],
-    ["react-remove-properties", { "properties": ["data-test", "data-foo"] }]
+    ["@babel/plugin-proposal-class-properties"  , { "loose": true }],
+    ["react-remove-properties", { "properties": ["data-foo"] }]
   ]
 }
