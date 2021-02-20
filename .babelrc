@@ -1,13 +1,3 @@
 {
-  "presets": [
-    "@babel/preset-react",
-    [
-      "@babel/preset-env",
-      { "targets": { "node":"current","browsers": ["> 1%", "last 2 versions"] } }
-    ]
-  ],
-  "plugins": [
-    ["@babel/plugin-proposal-class-properties"  , { "loose": true }],
-    ["react-remove-properties", { "properties": ["data-foo"] }]
-  ]
+  "presets": ["@babel/preset-react", "@babel/preset-env"]
 }
