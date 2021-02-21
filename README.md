@@ -13,7 +13,7 @@ yarn install
 
 ## run
 
-To run it on development server : default port is 9000
+To run it on development server : default port is 3000
 
 ```bash
 yarn start
